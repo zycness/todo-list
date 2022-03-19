@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700;900&display=swap");
+
+/* reseteo de los elementos */
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* variables */
+
+:root {
+  --primary-color: #2ec4b6;
+  --secundary-color: #effbfa;
+  --secundary-darker-color: #bdefeb;
+  --main-color: #ffffff;
+  --dark-color: #000000;
+  --box-shadow-container: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  --box-shadow-btn: rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  --box-shadow-inside: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+
+main {
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--main-color);
+}
+
+/* todoList-container */
+
+#todoList-container {
+  margin-top: 50px;
+  padding: 0 30px 30px 30px;
+  height: 300px;
+  width: 600px;
+  border-radius: 3px;
+  box-shadow: var(--box-shadow-container);
+  background: var(--main-color);
+}
+
+#todoList__title {
+  font-size: 5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+#todoList__title span {
+  color: var(--primary-color);
+}
+
+.todoList__input {
+  display: flex;
+  flex-direction: column;
+}
+
+label[for="taskText"] {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin: 5px 0;
+  width: fit-content;
+}
+
+#taskText {
+  resize: none;
+  height: 100px;
+  width: 100%;
+  border: none;
+  border-bottom: 3px solid var(--primary-color);
+  border-radius: 1px;
+  background: var(--white-color);
+  box-shadow: var(--box-shadow-inside);
+}
+
+#taskText:focus {
+  outline: none;
+  background: var(--secundary-color);
+}
+
+/* styling btn */
+
+.todoList__btn-container {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnInput {
+  width: 150px;
+  height: 35px;
+}
+
+/* btn */
+
+.btn {
+  cursor: pointer;
+  background: var(--primary-color);
+  border: 0;
+  border-radius: 3px;
+  color: var(--main-color);
+  box-shadow: var(--box-shadow-btn);
+  transition: all 200ms ease-out;
+}
+
+.btn:active {
+  box-shadow: none;
+  transform: translateY(1px);
+}
+
+/* styling tasks */
+.todoList__task-container {
+  width: 100%;
+}
+
+.typeList {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.todoList__task {
+  height: 150px;
+  width: 95%;
+  margin: 50px 0;
+  border-radius: 3px;
+  background: var(--main-color);
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+}
+
+/* TEXT */
+.taskContent {
+  height: 100%;
+  width: 100%;
+  resize: none;
+  border: none;
+  box-shadow: var(--box-shadow-inside);
+  background: var(--secundary-color);
+  font-size: 3rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  padding: 10px 2rem;
+}
+
+.taskContent:focus {
+  outline: none;
+  background: var(--secundary-darker-color);
+}
+
+.btnContainer {
+  width: 100px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* BTN */
+.removeBtn {
+  height: 50%;
+  width: 100%;
+  background: #d11a2a;
+  margin-bottom: 1px;
+}
+
+.editBtn {
+  height: 50%;
+  width: 100%;
+  margin-bottom: 1px;
+}
+
+/* CHECKBOX */
+
+.todoList__checkContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--primary-color);
+}
+
+.todoList__checkbox {
+  width: 50%;
+  height: 50%;
+}
+
+.contentEditable {
+  pointer-events: none;
+}
+
+.lineThrough {
+  text-decoration: line-through;
+  filter: brightness(60%);
+}
+
+@media screen and (min-width: 900px) {
+  .todoList__task {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .todoList__task {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 2300px) {
+  .todoList__task {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  #todoList-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .todoList__input {
+    width: 300px;
+  }
+
+  #todoList__title {
+    font-size: 3rem;
+  }
+}
